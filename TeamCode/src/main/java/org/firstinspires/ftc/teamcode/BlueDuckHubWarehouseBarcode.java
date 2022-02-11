@@ -28,7 +28,6 @@ public class BlueDuckHubWarehouseBarcode extends LinearOpMode {
         } else {
             robot.strafeLeftByTime(0.3, 2250);
             double distance = robot.distance.getDistance(DistanceUnit.CM);
-            robot.strafeRightByTime(0.3, 2200);
 
             if (distance < LlamaBot.ELEMENT_THRESHHOLD) {
                 // L2
@@ -44,17 +43,13 @@ public class BlueDuckHubWarehouseBarcode extends LinearOpMode {
         // Potential sleep to prevent robot collision with other team
         sleep(0);
 
-        // Drive back to wall
-        robot.driveForwardByTime(-1, 800);
-        robot.driveForwardByTime(-0.3, 200);
-
         // Strafe left and forward based on position (L3 require different values)
         if (dropPosition == LlamaBot.ARM_POSITION_L3_DROP) {
-            robot.strafeLeftByTime(1, 1900);
-            robot.driveForwardByTime(1/*robot.DRIVE_SPEED * 4*/, 1220);
+            robot.strafeLeftByTime(1, 1600);
+            robot.driveForwardByTime(1/*robot.DRIVE_SPEED * 4*/, 550);
         } else {
-            robot.strafeLeftByTime(1, 1950);
-            robot.driveForwardByTime(1/*robot.DRIVE_SPEED * 4*/, 1220);
+            robot.strafeLeftByTime(1, 1650);
+            robot.driveForwardByTime(1/*robot.DRIVE_SPEED * 4*/, 550);
         }
 
         // Drop cube
